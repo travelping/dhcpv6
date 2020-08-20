@@ -1,0 +1,9 @@
+*~
+*.[oa]
+*.beam
+/ebin/*.app
+/priv/*.so
+.rebar3
+_build
+rebar.lock
+/c_src/*.d
