@@ -1,0 +1,8 @@
+{application, dhcpv6,
+ [{description, "Erlang DHCPv6 Server"},
+  {vsn, git},
+  {modules, [dhcpv6_app, dhcpv6_sup, dhcpv6_server, dhcpv6_udp_server, dhcpv6_raw_server, dhcpv6_alloc, dhcpv6_lib]},
+  {registered, [dhcpv6_sup, dhcpv6_udp_server, dhcpv6_raw_server, dhcpv6_alloc]},
+  {applications, [kernel, stdlib]},
+  {mod, {dhcpv6_app, []}}
+ ]}.
