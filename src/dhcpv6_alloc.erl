@@ -355,21 +355,21 @@ init_subnet(#{subnet := SN0} = SubNet0) ->
     SubNet.
 
 init_pool(#{pool := {Min, Max}}, SN) ->
-    init_available(ip2int(Min), ip2int(Max), 128, SN).
+    init_available(ip2int(Min), 128, ip2int(Max), 1, SN).
 
 init_pd_pool(#{prefix := Prefix, prefix_len := PrefixLen, delegated_len := PdLen}, SN) ->
-    PSize = (1 bsl PrefixLen) - 1,
-    PMask = bnot PSize,
-    Min = ip2int(Prefix) band PMask,
-    Max = Min + PSize,
-    init_available(Min, Max, PdLen, SN).
+    Shift = (1 bsl (128 - PdLen)),
+    PdBits = (1 bsl (128 - PrefixLen)) - 1,
+    NetBits = bnot PdBits,
+    Min = ip2int(Prefix) band NetBits,
+    Max = Min bor PdBits,
+    init_available(Min, PdLen, Max, Shift, SN).
 
-init_available(X, Max, _Len, _SN) when X > Max ->
+init_available(X, _Len, Max, _Shift, _SN) when X > Max ->
     ok;
-init_available(X, Max, Len, SN) ->
+init_available(X, Len, Max, Shift, SN) ->
     ets:insert(?ADDRESS, #address{ip = {X, Len}, subnet = SN, status = available}),
-    Next = X + 1 bsl (128 - Len),
-    init_available(Next, Max, Len, SN).
+    init_available(X + Shift, Len, Max, Shift, SN).
 
 init_allocated(#{options := Options}) ->
     DateTime = {date(), time()},
