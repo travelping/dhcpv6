@@ -45,8 +45,7 @@ handle_dhcp(#dhcpv6{op = ?DHCPV6_RENEW,
 
 handle_dhcp(#dhcpv6{op = ?DHCPV6_REBIND,
 		    options =
-			#{?D6O_SERVERID := ServerId,
-			  ?D6O_CLIENTID := ClientId} = ReqOpts} = D,
+			#{?D6O_CLIENTID := ClientId} = ReqOpts} = D,
 	    #{server_id := ServerId} = Config) ->
     Opts = process_ia(fun dhcpv6_alloc:extend/5, ClientId, ReqOpts),
     reply(D, Opts, Config);
