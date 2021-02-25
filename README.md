@@ -1,7 +1,8 @@
 dhcpv6
 ======
-[![Build Status][travis badge]][travis]
-[![Erlang Versions][erlang version badge]][travis]
+[![Build Status][gh badge]][gh]
+[![Coverage Status][coveralls badge]][coveralls]
+[![Erlang Versions][erlang version badge]][gh]
 
 This is DHCPv6 Server in Erlang for running on Linux.
 
@@ -24,6 +25,8 @@ Using rebar:
     # rebar3 compile
 
 <!-- Badges -->
-[travis]: https://travis-ci.com/travelping/dhcpv6
-[travis badge]: https://img.shields.io/travis/travelping/com/dhcpv6/master.svg?style=flat-square
-[erlang version badge]: https://img.shields.io/badge/erlang-R22.3%20to%23.0-blue.svg?style=flat-square
+[gh]: https://github.com/travelping/dhcpv6/actions/workflows/main.yml
+[gh badge]: https://img.shields.io/github/workflow/status/travelping/dhcpv6/CI?style=flat-square
+[coveralls]: https://coveralls.io/github/travelping/dhcpv6
+[coveralls badge]: https://img.shields.io/coveralls/travelping/dhcpv6/master.svg?style=flat-square
+[erlang version badge]: https://img.shields.io/badge/erlang-22.3%20to%2023.2-blue.svg?style=flat-square
