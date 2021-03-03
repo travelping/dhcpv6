@@ -9,3 +9,4 @@ rebar.lock
 /c_src/*.d
 rebar3
 rebar.lock
+doc

@@ -4,5 +4,7 @@
   {modules, [dhcpv6_app, dhcpv6_sup, dhcpv6_server, dhcpv6_udp_server, dhcpv6_raw_server, dhcpv6_alloc, dhcpv6_lib]},
   {registered, [dhcpv6_sup, dhcpv6_udp_server, dhcpv6_raw_server, dhcpv6_alloc]},
   {applications, [kernel, stdlib]},
-  {mod, {dhcpv6_app, []}}
+  {mod, {dhcpv6_app, []}},
+  {licenses, ["GPL 2.0"]},
+  {links, [{"Github", "https://github.com/travelping/dhcpv6"}]}
  ]}.
