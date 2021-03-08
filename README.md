@@ -1,5 +1,7 @@
 dhcpv6
 ======
+[![Hex.pm Version][hexpm version]][hexpm]
+[![Hex.pm Downloads][hexpm downloads]][hexpm]
 [![Build Status][gh badge]][gh]
 [![Coverage Status][coveralls badge]][coveralls]
 [![Erlang Versions][erlang version badge]][gh]
@@ -25,6 +27,9 @@ Using rebar:
     # rebar3 compile
 
 <!-- Badges -->
+[hexpm]: https://hex.pm/packages/dhcpv6
+[hexpm version]: https://img.shields.io/hexpm/v/dhcpv6.svg?style=flat-square
+[hexpm downloads]: https://img.shields.io/hexpm/dt/dhcpv6.svg?style=flat-square
 [gh]: https://github.com/travelping/dhcpv6/actions/workflows/main.yml
 [gh badge]: https://img.shields.io/github/workflow/status/travelping/dhcpv6/CI?style=flat-square
 [coveralls]: https://coveralls.io/github/travelping/dhcpv6
